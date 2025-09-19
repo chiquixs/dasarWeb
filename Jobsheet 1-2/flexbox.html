@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Flexbox</title>
+    <link rel="stylesheet" href="style1.css">
+    <style>
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ddd;
+    line-height: 1.65;
+    padding-bottom: 1000px;
+    background: url(img/bunga1.jpeg);
+}
+
+
+.container-satu{
+    width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.sidebar-satu{
+    flex: 1; 
+    background: #fff;
+    padding: 10px;
+    order: initial;
+    order: 1;
+    background-color: beige;
+}
+
+.kolom-utama {
+    flex: 2; 
+    text-align: left; 
+    order: 2;
+    background-color: bisque;
+}
+
+.sidebar-dua {
+    flex: 1; 
+    background: #fff;
+    padding: 10px;
+    order: 3;
+    background-color: beige;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container-satu">
+    
+    <div class="kolom-utama">
+        <h2>Judul Artikel</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet justo enim. 
+            Etiam congue accumsan ornare. Morbi turpis urna, accumsan eget lacinia ut, tristique 
+            sit amet risus. Proin dui quam, eleifend in massa vitae, euismod gravida risus. 
+            Duis non eleifend ligula, sed efficitur turpis. Ut eleifend nisl ut nibh tincidunt 
+            sodales. Vestibulum tempus tempus commodo.
+        </p>
+        <p>
+            Fusce condimentum interdum elit, aliquam dapibus elit ornare viverra. Ut ut libero eget 
+            lectus suscipit aliquet a ac eros. Mauris varius scelerisque elit, eget elementum leo 
+            eleifend id. Morbi dapibus odio leo, placerat accumsan dui pulvinar non. 
+            Morbi feugiat pharetra nulla. Fusce blandit dolor nec tortor varius porttitor.
+        </p>
+        <p>
+            Vivamus aliquam purus sed lacus mollis maximus. Nullam imperdiet euismod velit, venenatis euismod tellus gravida in.
+        </p>
+    </div>
+    <div class="sidebar-satu">
+        <h3>Sidebar Satu</h3>
+        <ul>
+            <li><a href="">Link 1</a></li>
+            <li><a href="">Link 2</a></li>
+            <li><a href="">Link 3</a></li>
+            <li><a href="">Link 4</a></li>
+            <li><a href="">Link 5</a></li>
+        </ul>
+    </div>
+
+    <div class="sidebar-dua">
+        <h3>Sidebar Dua</h3>
+        <p>
+            Vivamus aliquam purus sed lacus mollis maximus. Nullam imperdiet euismod 
+            velit, venenatis euismod tellus gravida in.
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
