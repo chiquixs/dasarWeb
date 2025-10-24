@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h3>Register your product warranty now</h3><br>
+
+    <form method="post" id="bodyForm" action="processForm.php" enctype="multipart/form-data">
+        <h1 class="header">Warranty Registration Form</h1>
+
+        <label for="firstName">First Name*</label>
+        <input type="text" name="firstName" id="firstName" required>
+
+        <label for="lastName">Last Name</label>
+        <input type="text" name="lastName" id="lastName"><br>
+
+        <label for="email">Email*</label>
+        <input type="email" name="email" id="email" required><br>
+
+        <label for="number">Phone Number*</label>
+        <input type="tel" name="number" id="number" required><br>
+
+        <label for="addres">Address</label>
+        <input type="text" name="address" id="address"><br>
+
+        <label for="date">Date Purchasing*</label>
+        <input type="date" name="date" id="date" required><br>
+
+        <label for="location">Purchase Location*</label>
+        <select name="location" id="location" required>
+            <option value="1">Cab. Suhat</option>
+            <option value="2">Cab. Tlogomas</option>
+            <option value="3">Cab. Blimbing</option>
+            <option value="4">Cab. Araya</option>
+        </select><br><br>
+
+        <b style="font-size: 18px;">Product Code (Select 1)</b>
+        <div class="product-code-group">
+            <label for="productCode"></label><br>
+            <label><input type="radio" name="productCode" value="C0015"> <b>C0015</b></label><br>
+            <label><input type="radio" name="productCode" value="B0015"> <b>B0015</b></label><br>
+            <label><input type="radio" name="productCode" value="A0015"> <b>A0015</b></label>
+        </div>
+
+        <b style="font-size: 18px;">Purchase Receipt*</b><br>
+        <input type="file" name="receipt" id="receipt" multiple required><p id="require">(.jpg, .jpeg, png)</p>
+
+        <p class="keterangan">Attention! The warranty period will be automatically calculated based on the date of purchase</p>
+
+        <label for="syarat">I agree that the product information I provided is correct and I accept the warranty terms</label>
+        <input type="checkbox" name="syarat" id="syarat" required><b style="color: green;">I Agree</b><br><br>
+
+        <input type="submit" name="submit" id="submit">
+    </form>
+    
+
+</body>
+</html>
+
+<script>
+    $(document).ready(function(){
+        // agar nomor telfon valid dan berbentuk angka
+        $("#bodyForm").submit(function(e){
+            const hp = $("#number").val();
+            const validasiHP = /^[0-9]{12,13}$/;
+            if (!validasiHP.test(hp)) {
+                alert("The mobile phone number must consist of numbers and be at least 12 digits long!");
+                e.preventDefault();
+            return;
+        }
+        
+        });
+    });
+</script>
